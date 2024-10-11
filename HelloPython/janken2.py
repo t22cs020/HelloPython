@@ -11,12 +11,13 @@ def hands(choice):
 def janken():
     A_win = 0
     B_win = 0
-    
+    count = 1
     choices = ['0', '1', '2']
     
     print("３回勝負のじゃんけんを始めます！")
     
     while(A_win < 3 and B_win < 3):
+        print("[", count, "回戦]")
         print("0:グー、1:チョキ、2:パー")
 
         user_choice = input("あなたの選択を入力してください: ")
@@ -39,9 +40,11 @@ def janken():
              (user_choice == 2 and computer_choice == 0):
             print("Aの勝ち")
             A_win += 1
+            count += 1
         else:
             print("Bの勝ち")
             B_win += 1
+            count += 1
             
         print("A:",A_win,"  B:",B_win)
     
